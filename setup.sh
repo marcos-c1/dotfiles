@@ -11,3 +11,7 @@ cp $tmux ~/.$tmux
 cp $zsh ~/.$zsh
 cp $bash ~/.$bash
 cp $rc ~/.ssh/$rc
+
+tmux source-file ~/.$tmux
+source ~/.$zsh
+source ~/.$bash
