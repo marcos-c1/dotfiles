@@ -5,7 +5,9 @@
 tmux='tmux.conf'
 zsh='zshrc'
 bash='bashrc'
+rc='rc'
 
 cp $tmux ~/.$tmux
 cp $zsh ~/.$zsh
 cp $bash ~/.$bash
+cp $rc ~/.ssh/$rc
