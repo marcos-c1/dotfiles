@@ -1,5 +1,3 @@
-eval $(keychain --agents ssh --attempts 3 --eval git)
-
 if [ -z "$TMUX" ]
 then
     tmux attach -t TMUX || tmux new -s TMUX
