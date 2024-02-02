@@ -3,6 +3,7 @@
 # Whenever new dotfiles are used, create a new variable to store each one of them.
 
 tmux='tmux.conf'
+tmux_folder='tmux'
 zsh='zshrc'
 bash='bashrc'
 rc='rc'
@@ -13,6 +14,7 @@ new_changes(){
 	cp ~/.$zsh $zsh 
 	cp ~/.$bash $bash 
 	cp ~/.ssh/$rc $rc
+	cp -r ~/$tmux_folder $tmux_folder 
 }
 
 helper(){
@@ -24,6 +26,7 @@ setup(){
 	cp $zsh ~/.$zsh
 	cp $bash ~/.$bash
 	cp $rc ~/.ssh/$rc
+	cp -r $tmux_folder ~/$tmux_folder
 
 	tmux source-file ~/.$tmux
 	source ~/.$zsh
