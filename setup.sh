@@ -14,7 +14,7 @@ new_changes(){
 	cp ~/.$zsh $zsh 
 	cp ~/.$bash $bash 
 	cp ~/.ssh/$rc $rc
-	cp -r ~/$tmux_folder $tmux_folder 
+	cp -r ~/.$tmux_folder $tmux_folder 
 }
 
 helper(){
