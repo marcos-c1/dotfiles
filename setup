@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/zsh
+# Change the shebang alongside $SHELL output
 
 # Whenever new dotfiles are used, create a new variable to store each one of them.
 
@@ -7,6 +8,7 @@ tmux_folder='tmux'
 zsh='zshrc'
 bash='bashrc'
 rc='rc'
+shell=$(which $SHELL)
 arg=$1
 
 new_changes(){
@@ -26,11 +28,16 @@ setup(){
 	cp $zsh ~/.$zsh
 	cp $bash ~/.$bash
 	cp $rc ~/.ssh/$rc
-	cp -r $tmux_folder ~/$tmux_folder
+	cp -rv $tmux_folder ~/.$tmux_folder
 
+	if [[ $shell == "/bin/zsh" ]]; then
+		source ~/.$zsh
+	elif [[ $shell == "/bin/sh" ]]; then 
+		source ~/.$bash
+	else
+		echo "$shell not found."
+	fi
 	tmux source-file ~/.$tmux
-	source ~/.$zsh
-	source ~/.$bash
 }
 
 if [ "$#" -eq 0 ]; then
