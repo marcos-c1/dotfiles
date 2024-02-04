@@ -28,6 +28,7 @@ setup(){
 	cp $zsh ~/.$zsh
 	cp $bash ~/.$bash
 	cp $rc ~/.ssh/$rc
+	rm -rf ~/.$tmux_folder
 	cp -rv $tmux_folder ~/.$tmux_folder
 
 	if [[ $shell == "/bin/zsh" ]]; then
