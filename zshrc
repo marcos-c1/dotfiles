@@ -88,6 +88,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+alias _copy='xclip -selection clipboard'
+alias _paste='xclip -selection -o'
 alias nv='nvim'
 alias lv='lvim'
 alias chat='node ~/workspace/wpp/index.js'
