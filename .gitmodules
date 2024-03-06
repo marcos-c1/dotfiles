@@ -10,3 +10,15 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux_plugins/plugins/tmux-resurrect"]
+	path = tmux_plugins/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "tmux_plugins/plugins/tmux-sensible"]
+	path = tmux_plugins/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "tmux_plugins/plugins/tmux-continuum"]
+	path = tmux_plugins/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule "tmux_plugins/plugins/tpm"]
+	path = tmux_plugins/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

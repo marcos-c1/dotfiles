@@ -15,7 +15,13 @@ new_changes(){
 	cp ~/$zsh zsh/$zsh 
 	cp ~/$bash bash/$bash 
 	cp ~/.ssh/$rc $rc
-	cp -r ~/.tmux tmux_plugins 
+  rm -r tmux_plugins 
+  mkdir tmux_plugins
+  #git submodule add https://github.com/catppuccin/tmux tmux_plugins/plugins/catppuccin
+  git submodule add -f https://github.com/tmux-plugins/tmux-resurrect tmux_plugins/plugins/tmux-resurrect
+  git submodule add -f https://github.com/tmux-plugins/tmux-sensible tmux_plugins/plugins/tmux-sensible
+  git submodule add -f https://github.com/tmux-plugins/tmux-continuum tmux_plugins/plugins/tmux-continuum
+  git submodule add -f https://github.com/tmux-plugins/tpm tmux_plugins/plugins/tpm
 }
 
 helper(){
