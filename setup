@@ -3,10 +3,9 @@
 
 # Whenever new dotfiles are used, create a new variable to store each one of them.
 
-tmux='tmux.conf'
-tmux_folder='tmux'
-zsh='zshrc'
-bash='bashrc'
+tmux='.tmux.conf'
+zsh='.zshrc'
+bash='.bashrc'
 rc='rc'
 shell=$(which $SHELL)
 arg=$1
@@ -24,21 +23,21 @@ helper(){
 }
 
 setup(){
-	cp $tmux ~/.$tmux
-	cp $zsh ~/.$zsh
-	cp $bash ~/.$bash
+	cp tmux/$tmux ~/$tmux
+	cp zsh/$zsh ~/$zsh
+	cp bash/$bash ~/$bash
 	cp $rc ~/.ssh/$rc
 	rm -rf ~/.$tmux_folder
 	cp -rv $tmux_folder ~/.$tmux_folder
 
 	if [[ $shell == "/bin/zsh" ]]; then
-		source ~/.$zsh
+		source ~/$zsh
 	elif [[ $shell == "/bin/sh" ]]; then 
-		source ~/.$bash
+		source ~/$bash
 	else
 		echo "$shell not found."
 	fi
-	tmux source ~/.$tmux
+	tmux source ~/$tmux
 }
 
 if [ "$#" -eq 0 ]; then

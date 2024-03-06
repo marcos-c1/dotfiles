@@ -1,0 +1,24 @@
+#!/bin/bash
+
+dotfiles_path=$(pwd)
+
+ln -s $dotfiles_path/zsh/
+
+# configure
+# oh-my-zsh
+ln -s $dotfiles_path/zsh/oh-my-zsh ~/.oh-my-zsh
+ln -s $dotfiles_path/zsh/.zshrc ~/.zshrc
+
+# zsh-autosuggestions
+ln -s $dotfiles_path/zsh/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+# zsh-syntax-highlighting
+ln -s $dotfiles_path/zsh/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+# tmux
+ln -s $dotfiles_path/tmux/.tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# nvim 
+git clone https://github.com/marcos-c1/nvim-config ~/.config/nvim
+ln -s $dotfiles_path/.config/nvim ~/.config/nvim
