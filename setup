@@ -11,11 +11,11 @@ shell=$(which $SHELL)
 arg=$1
 
 new_changes(){
-	cp ~/.$tmux $tmux
-	cp ~/.$zsh $zsh 
-	cp ~/.$bash $bash 
+	cp ~/$tmux tmux/$tmux
+	cp ~/$zsh zsh/$zsh 
+	cp ~/$bash bash/$bash 
 	cp ~/.ssh/$rc $rc
-	cp -r ~/.$tmux_folder $tmux_folder 
+	cp -r ~/.tmux tmux_plugins 
 }
 
 helper(){
@@ -27,8 +27,8 @@ setup(){
 	cp zsh/$zsh ~/$zsh
 	cp bash/$bash ~/$bash
 	cp $rc ~/.ssh/$rc
-	rm -rf ~/.$tmux_folder
-	cp -rv $tmux_folder ~/.$tmux_folder
+	rm -rf ~/.tmux
+	cp -rv tmux_plugins ~/.tmux
 
 	if [[ $shell == "/bin/zsh" ]]; then
 		source ~/$zsh
