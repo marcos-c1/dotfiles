@@ -93,4 +93,4 @@ alias _paste='xclip -selection -o'
 alias nv='nvim'
 alias lv='lvim'
 alias chat='node ~/workspace/wpp/index.js'
-export PATH=/home/rvlt/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:$PATH
