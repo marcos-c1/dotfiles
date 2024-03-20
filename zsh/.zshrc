@@ -93,4 +93,6 @@ alias _paste='xclip -selection -o'
 alias nv='nvim'
 alias lv='lvim'
 alias chat='node ~/workspace/wpp/index.js'
-export PATH=$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:$PATH
+export GOPATH=$HOME/go
+export DENO_INSTALL=$HOME/.deno
+export PATH=$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/usr/local/go/bin:$DENO_INSTALL/bin:$HOME/flutter/bin:$PATH

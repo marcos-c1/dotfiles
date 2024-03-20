@@ -20,5 +20,5 @@ ln -s $dotfiles_path/tmux/.tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # nvim 
-git clone https://github.com/marcos-c1/nvim-config ~/.config/nvim
+git clone https://github.com/marcos-c1/nvim-config ~/.config/
 ln -s $dotfiles_path/.config/nvim ~/.config/nvim
