@@ -30,15 +30,15 @@ setup(){
 	echo "Copying $wd/$zsh to ~/$zsh"
 	cp "$wd/$zsh" ~/"$zsh"
 	echo "Copying $wd/$bash to ~/$bash"
-	cp "$wd/$bash ~/"$bash"
+	cp "$wd/$bash" ~/"$bash"
 	echo "Copying $rc to ~/.ssh/$rc"
 	cp "$rc" ~/.ssh/"$rc"
 	echo "Copying $wd/$tmux_folder to ~/$tmux_folder"
-  cp -r "$wd/$tmux_folder" ~/"$tmux_folder"
+	cp -r "$wd/$tmux_folder" ~/"$tmux_folder"
 
 	if [[ $shell == "/usr/bin/zsh" ]]; then
 		source ~/$zsh
-	elif [[ $shell == "/usr/bin/sh" ]]; then
+	elif [[ $shell == "/usr/bin/bash" ]]; then
 		source ~/$bash
 	else
 		echo "$shell not found."
