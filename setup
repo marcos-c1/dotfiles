@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 # Change the shebang alongside $SHELL output
 
 # Whenever new dotfiles are used, create a new variable to store each one of them.
@@ -14,10 +14,10 @@ arg=$1
 
 new_changes(){
 	cp ~/$tmux $wd/$tmux
-	cp ~/$zsh $wd/$zsh 
-	cp ~/$bash $wd/$bash 
+	cp ~/$zsh $wd/$zsh
+	cp ~/$bash $wd/$bash
 	cp ~/.ssh/$rc $wd/$rc
-  cp -r ~/$tmux_folder $wd/$tmux_folder 
+  cp -r ~/$tmux_folder $wd/$tmux_folder
 }
 
 helper(){
@@ -25,19 +25,25 @@ helper(){
 }
 
 setup(){
-	cp $wd/$tmux ~/$tmux
-	cp $wd/$zsh ~/$zsh
-	cp $wd/$bash ~/$bash
-	cp $rc ~/.ssh/$rc
-  cp -r $wd/$tmux_folder ~/$tmux_folder 
+	echo "Copying $wd/$tmux to ~/$tmux"
+	cp "$wd/$tmux" ~/"$tmux"
+	echo "Copying $wd/$zsh to ~/$zsh"
+	cp "$wd/$zsh" ~/"$zsh"
+	echo "Copying $wd/$bash to ~/$bash"
+	cp "$wd/$bash ~/"$bash"
+	echo "Copying $rc to ~/.ssh/$rc"
+	cp "$rc" ~/.ssh/"$rc"
+	echo "Copying $wd/$tmux_folder to ~/$tmux_folder"
+  cp -r "$wd/$tmux_folder" ~/"$tmux_folder"
 
-	if [[ $shell == "/bin/zsh" ]]; then
+	if [[ $shell == "/usr/bin/zsh" ]]; then
 		source ~/$zsh
-	elif [[ $shell == "/bin/sh" ]]; then 
+	elif [[ $shell == "/usr/bin/sh" ]]; then
 		source ~/$bash
 	else
 		echo "$shell not found."
 	fi
+  echo "\033[92mCompleted.\033[0m"
 	tmux source ~/$tmux
 }
 
