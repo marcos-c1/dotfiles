@@ -109,4 +109,4 @@ alias lv='lvim'
 alias chat='node ~/workspace/wpp/index.js'
 export GOPATH=$HOME/go
 export DENO_INSTALL=$HOME/.deno
-export PATH=$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/usr/local/go/bin:$DENO_INSTALL/bin:$HOME/flutter/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/usr/local/go/bin:$DENO_INSTALL/bin:$HOME/flutter/bin:$HOME/.cargo/bin:$PATH

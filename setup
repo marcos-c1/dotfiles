@@ -13,11 +13,11 @@ wd=$(pwd)
 arg=$1
 
 new_changes(){
-	cp ~/$tmux $wd/$tmux
-	cp ~/$zsh $wd/$zsh
-	cp ~/$bash $wd/$bash
-	cp ~/.ssh/$rc $wd/$rc
-  cp -r ~/$tmux_folder $wd/$tmux_folder
+	cp -f ~/$tmux $wd/$tmux
+	cp -f ~/$zsh $wd/$zsh
+	cp -f ~/$bash $wd/$bash
+	cp -f ~/.ssh/$rc $wd/$rc
+	cp -r -f ~/$tmux_folder $wd/$tmux_folder
 }
 
 helper(){
@@ -26,15 +26,15 @@ helper(){
 
 setup(){
 	echo "Copying $wd/$tmux to ~/$tmux"
-	cp "$wd/$tmux" ~/"$tmux"
+	cp -f "$wd/$tmux" ~/"$tmux"
 	echo "Copying $wd/$zsh to ~/$zsh"
-	cp "$wd/$zsh" ~/"$zsh"
+	cp -f "$wd/$zsh" ~/"$zsh"
 	echo "Copying $wd/$bash to ~/$bash"
-	cp "$wd/$bash" ~/"$bash"
+	cp -f "$wd/$bash" ~/"$bash"
 	echo "Copying $rc to ~/.ssh/$rc"
-	cp "$rc" ~/.ssh/"$rc"
+	cp -f "$rc" ~/.ssh/"$rc"
 	echo "Copying $wd/$tmux_folder to ~/$tmux_folder"
-	cp -r "$wd/$tmux_folder" ~/"$tmux_folder"
+	cp -r -f --copy-contents "$wd/$tmux_folder" ~/"$tmux_folder"
 
 	if [[ $shell == "/usr/bin/zsh" ]]; then
 		source ~/$zsh
