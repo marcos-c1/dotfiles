@@ -34,7 +34,7 @@ setup(){
 	echo "Copying $rc to ~/.ssh/$rc"
 	cp -f $rc ~/.ssh/$rc
 	echo "Copying $wd/$tmux_folder to ~/$tmux_folder"
-  if [[ ! -z ~/$tmux_folder ]]; then
+  if [ ! -d ~/$tmux_folder ]; then
     mkdir ~/$tmux_folder
   fi
 	cp -r -f --copy-contents $wd/$tmux_folder/* ~/$tmux_folder
